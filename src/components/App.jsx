@@ -29,7 +29,6 @@ export function App() {
       try {
         setIsLoading(true);
         const { hits, totalHits } = await ApiService(query, page);
-        console.log(query);
         if (hits.length !== 0) {
           setItems(prevState => [...prevState, ...hits]);
           setShowLoadButton(page < Math.ceil(totalHits / 12));
