@@ -45,7 +45,7 @@ export function App() {
   }, [page, query]);
 
   const toggleModal = () => {
-    setShowModal(!showModal);
+    setShowModal(prevState => !prevState);
   };
 
   const onClickImage = (url, name) => {
