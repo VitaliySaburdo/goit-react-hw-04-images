@@ -9,6 +9,7 @@ import { LoadButton } from './Button/Button';
 import { Modal } from './Modal/Modal';
 import Loader from './Loader/Loader';
 import PropTypes from 'prop-types';
+import * as Scroll from 'react-scroll';
 
 export function App() {
   const [page, setPage] = useState(1);
@@ -56,6 +57,7 @@ export function App() {
 
   const LoadMore = () => {
     setPage(prevState => prevState + 1);
+    scrolling();
   };
 
   const formSubmitHendler = ({ query }) => {
@@ -64,6 +66,10 @@ export function App() {
     setItems([]);
     setShowLoadButton(false);
   };
+   function scrolling() {
+    const scroll = Scroll.animateScroll;
+    scroll.scrollMore(650);
+  }
 
   return (
     <>
